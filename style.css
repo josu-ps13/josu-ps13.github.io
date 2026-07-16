@@ -2,26 +2,26 @@
 
 /* ── Light theme (default) ── */
 :root {
-  --bg: #f5f6fa;
+  --bg: #ffffff;
   --surface: #ffffff;
   --border: #dde0eb;
-  --accent: #3a5fd9;
-  --accent-soft: rgba(58,95,217,0.08);
-  --text: #1a1d27;
-  --muted: #6b6f88;
+  --accent: #4a8239;
+  --accent-soft: rgba(105, 219, 101, 0.08);
+  --text: #182318;
+  --muted: #43533f;
   --radius: 12px;
 }
 
 /* ── Dark theme ── */
 @media (prefers-color-scheme: dark) {
   :root {
-    --bg: #0f1117;
-    --surface: #1a1d27;
-    --border: #2a2d3a;
-    --accent: #6c8efb;
-    --accent-soft: rgba(108,142,251,0.12);
+    --bg: #000000;
+    --surface: #171f18;
+    --border: #273227;
+    --accent: #76c279;
+    --accent-soft: rgba(125, 255, 127, 0.12);
     --text: #e8eaf0;
-    --muted: #8b8fa8;
+    --muted: #869a83;
   }
 }
 
@@ -265,4 +265,82 @@ footer {
 
 @media (max-width: 480px) {
   .hero h1 { font-size: 1.6rem; }
+}
+
+/* ── Home nav buttons (shown on profile page) ── */
+.section-nav {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 0.6rem;
+  margin-top: 1.5rem;
+}
+
+.section-nav-btn {
+  padding: 0.5rem 1.1rem;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 999px;
+  font-size: 0.875rem;
+  font-weight: 600;
+  color: var(--text);
+  cursor: pointer;
+  transition: border-color 0.2s, background 0.2s, color 0.2s;
+}
+
+.section-nav-btn:hover {
+  border-color: var(--accent);
+  background: var(--accent-soft);
+  color: var(--accent);
+}
+
+/* ── Top tab bar (shown inside a section) ── */
+.tab-bar {
+  display: none;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 0.4rem;
+  padding-bottom: 1.5rem;
+  margin-bottom: 1.5rem;
+  border-bottom: 1px solid var(--border);
+}
+
+.tab-bar.visible {
+  display: flex;
+}
+
+.tab-btn {
+  padding: 0.45rem 1rem;
+  background: transparent;
+  border: 1px solid transparent;
+  border-radius: 999px;
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: var(--muted);
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.tab-btn:hover {
+  color: var(--accent);
+}
+
+.tab-btn.active {
+  background: var(--accent-soft);
+  border-color: rgba(108,142,251,0.25);
+  color: var(--accent);
+}
+
+.tab-btn.home-btn {
+  color: var(--text);
+  border-color: var(--border);
+}
+
+/* ── Page visibility ── */
+.page {
+  display: none;
+}
+
+.page.active {
+  display: block;
 }

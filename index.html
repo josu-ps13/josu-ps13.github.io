@@ -7,9 +7,18 @@
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
-  <div class="container">
+<div class="container">
 
-    <!-- ── Hero ── -->
+  <!-- ── Top tab bar: hidden on home, shown inside a section ── -->
+  <nav class="tab-bar" id="tabBar">
+    <button class="tab-btn home-btn" data-target="home">Home</button>
+    <button class="tab-btn" data-target="about">About</button>
+    <button class="tab-btn" data-target="skills">Skills</button>
+    <button class="tab-btn" data-target="experience">Experience</button>
+  </nav>
+
+    <!-- ── HOME / profile page ── -->
+  <div class="page active" id="page-home">
     <header class="hero">
       <img class="avatar" src="assets/photo.jpg" alt="Josué" onerror="this.style.display='none'" />
       <h1>Josué Pérez Sabater</h1>
@@ -48,35 +57,45 @@
           Spotify
         </a>
       </nav>
-    </header>
 
-    <!-- ── About ── -->
+      <!-- Buttons leading into each section -->
+      <div class="section-nav">
+        <button class="section-nav-btn" data-target="about">About</button>
+        <button class="section-nav-btn" data-target="skills">Skills</button>
+        <button class="section-nav-btn" data-target="experience">Experience</button>
+      </div>
+    </header>
+  </div>
+
+
+  <!-- ── ABOUT ── -->
+  <div class="page" id="page-about">
     <section>
       <h2>About</h2>
       <div class="card about">
-        <p>
-          Hi! I'm Josu — write a couple of sentences about yourself here. What do you do,
-          what are you passionate about, where are you based?
-        </p>
-        <p>
-          Feel free to add more paragraphs. Keep it friendly and personal.
-        </p>
+        <p>Hi! I'm Josu. Passionate about putting my skills at the service of the community and society. I also like to read, travel, think and organize. Sometimes a bit too much.</p>
+        <p>Feel free to add more paragraphs. Keep it friendly and personal.</p>
       </div>
     </section>
+  </div>
 
-    <!-- ── Skills ── -->
+
+  <!-- ── SKILLS ── -->
+  <div class="page" id="page-skills">
     <section>
       <h2>Skills</h2>
       <div class="card">
         <div class="skills">
-          <!-- Add or remove tags to match your actual skills -->
+          <span class="skill-tag">Listening</span>
           <span class="skill-tag">Python</span>
-          <span class="skill-tag">Git</span>
         </div>
       </div>
     </section>
+  </div>
 
-    <!-- ── CV / Experience ── -->
+
+  <!-- ── EXPERIENCE ── -->
+  <div class="page" id="page-experience">
     <section>
       <h2>Experience</h2>
       <div class="card">
@@ -87,23 +106,51 @@
           <span class="desc">Short description of what you did / achieved.</span>
         </div>
         <div class="cv-entry">
-          <span class="role">Previous Role</span>
-          <span class="org">Another Company</span>
-          <span class="period">Month Year – Month Year</span>
-          <span class="desc">Short description of what you did / achieved.</span>
-        </div>
-        <div class="cv-entry">
           <span class="role">Education · Degree Name</span>
           <span class="org">University / Institution</span>
           <span class="period">Year – Year</span>
         </div>
+        <div class="cv-entry">
+          <span class="role">Master's degree · Machine Learning for Health</span>
+          <span class="org">Universidad Carlos III de Madrid</span>
+          <span class="period">2023 – 2024</span>
+        </div>
+        <div class="cv-entry">
+          <span class="role">Bachelor's degree · Biomedical Engineering</span>
+          <span class="org">Universidad Carlos III de Madrid</span>
+          <span class="period">2018 – 2023</span>
+        </div>
       </div>
     </section>
-
-    <footer>
-      <p>© 2026 · Josué Pérez Sabater</p>
-    </footer>
-
   </div>
+
+  <footer>
+    <p>© 2026 · Josué Pérez Sabater</p>
+  </footer>
+
+</div>
+
+<script>
+  function showPage(target) {
+    document.querySelectorAll('.page').forEach(p => p.classList.remove('active'));
+    document.getElementById('page-' + target).classList.add('active');
+
+    const tabBar = document.getElementById('tabBar');
+    if (target === 'home') {
+      tabBar.classList.remove('visible');
+    } else {
+      tabBar.classList.add('visible');
+    }
+
+    document.querySelectorAll('.tab-btn').forEach(btn => {
+      btn.classList.toggle('active', btn.dataset.target === target && target !== 'home');
+    });
+  }
+
+  document.querySelectorAll('[data-target]').forEach(el => {
+    el.addEventListener('click', () => showPage(el.dataset.target));
+  });
+</script>
+
 </body>
 </html>
