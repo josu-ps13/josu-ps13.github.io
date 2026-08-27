@@ -272,9 +272,20 @@ section h2 {
   flex-shrink: 0;
 }
 
+.knowme-links {
+  flex: 1;
+  min-width: 0;
+}
+
+.knowme-slogan {
+  color: var(--muted);
+  font-size: 0.95rem;
+  font-style: italic;
+  margin-bottom: 0.75rem;
+}
+
 .knowme-socials {
   justify-content: flex-start;
-  flex: 1;
 }
 
 @media (max-width: 480px) {
@@ -284,6 +295,9 @@ section h2 {
   }
   .knowme-socials {
     justify-content: center;
+  }
+  .knowme-links {
+    width: 100%;
   }
 }
 
