@@ -1,9 +1,13 @@
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
-/* ── Light theme (default) ── */
-:root {
+/* -- THEME ----------------------------------------------------------------- */
+
+/* Light (default) */
+:root,
+[data-theme="light"] {
   --bg: #ffffff;
   --surface: #ffffff;
+  --container-bg: rgba(255, 255, 255, 0.75);
   --border: #dde0eb;
   --accent: #4a8239;
   --accent-soft: rgba(105, 219, 101, 0.08);
@@ -12,17 +16,16 @@
   --radius: 12px;
 }
 
-/* ── Dark theme ── */
-@media (prefers-color-scheme: dark) {
-  :root {
-    --bg: #000000;
-    --surface: #171f18;
-    --border: #273227;
-    --accent: #76c279;
-    --accent-soft: rgba(125, 255, 127, 0.12);
-    --text: #e8eaf0;
-    --muted: #869a83;
-  }
+/* Dark */
+[data-theme="dark"] {
+  --bg: #000000;
+  --surface: #171f18;
+  --container-bg: rgba(0, 0, 0, 0.75);
+  --border: #273227;
+  --accent: #76c279;
+  --accent-soft: rgba(125, 255, 127, 0.12);
+  --text: #e8eaf0;
+  --muted: #869a83;
 }
 
 body {
@@ -40,25 +43,20 @@ body {
 a { color: var(--accent); text-decoration: none; }
 a:hover { text-decoration: underline; }
 
-/* ── Layout ── */
+/* -- LAYOUT ---------------------------------------------------------------- */
+
 .container {
   max-width: 720px;
-  margin: 2rem auto;
-  padding: 2rem 1.5rem;
-  background: rgba(255, 255, 255, 0.75); /* light theme */
+  margin: 1rem auto;
+  padding: 0.5rem 2rem;
+  background: var(--container-bg);
   border-radius: 16px;
   box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
   backdrop-filter: blur(10px);
-  -webkit-backdrop-filter: blur(10px); /* Safari support */
+  -webkit-backdrop-filter: blur(10px);
 }
 
-@media (prefers-color-scheme: dark) {
-  .container {
-    background: rgba(26, 29, 39, 0.75); /* dark theme */
-  }
-}
-
-/* ── Hero ── */
+/* Hero */
 .hero {
   display: flex;
   flex-direction: column;
@@ -125,7 +123,7 @@ a:hover { text-decoration: underline; }
   text-decoration: underline;
 }
 
-/* ── Social links ── */
+/* Social links */
 .socials {
   display: flex;
   flex-wrap: wrap;
@@ -161,7 +159,7 @@ a:hover { text-decoration: underline; }
   fill: currentColor;
 }
 
-/* ── Sections ── */
+/* Sections */
 section {
   margin-top: 2.5rem;
 }
@@ -182,7 +180,7 @@ section h2 {
   padding: 1.25rem 1.5rem;
 }
 
-/* ── About ── */
+/* About */
 .about p {
   color: var(--text);
   font-size: 0.975rem;
@@ -191,7 +189,7 @@ section h2 {
 .about p:last-child { margin-bottom: 0; }
 
 
-/* ── Gallery ── */
+/* Gallery */
 .gallery {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
@@ -207,7 +205,7 @@ section h2 {
   background: var(--surface);
 }
 
-/* ── Experience ── */
+/* Experience */
 .cv-entry {
   display: flex;
   flex-direction: column;
@@ -240,7 +238,7 @@ section h2 {
   margin-top: 0.2rem;
 }
 
-/* ── Skills ── */
+/* Skills */
 .skills {
   display: flex;
   flex-wrap: wrap;
@@ -256,7 +254,7 @@ section h2 {
   color: var(--accent);
 }
 
-/* ── "Get to know me" — photo + social pills row ── */
+/* Get to know me */
 .knowme-top {
   display: flex;
   align-items: center;
@@ -289,19 +287,17 @@ section h2 {
   }
 }
 
-/* ── Carousel ── */
+/* Carousel */
 .carousel {
   padding: 0;
   overflow: hidden;
 }
-
 .carousel-track {
   position: relative;
   width: 100%;
   aspect-ratio: 16/9;
   background: var(--bg);
 }
-
 .carousel-slide {
   position: absolute;
   inset: 0;
@@ -311,18 +307,15 @@ section h2 {
   opacity: 0;
   transition: opacity 0.6s ease;
 }
-
 .carousel-slide.active {
   opacity: 1;
 }
-
 .carousel-dots {
   display: flex;
   justify-content: center;
   gap: 0.4rem;
   padding: 0.75rem 0;
 }
-
 .carousel-dot {
   width: 7px;
   height: 7px;
@@ -331,90 +324,45 @@ section h2 {
   cursor: pointer;
   transition: background 0.2s;
 }
-
 .carousel-dot.active {
   background: var(--accent);
 }
 
-/* ── Footer ── */
+/* Footer */
 footer {
   text-align: center;
   color: var(--muted);
   font-size: 0.8rem;
-  padding: 3rem 0 2rem;
+  padding: 1rem 0;
 }
 
 @media (max-width: 480px) {
   .hero h1 { font-size: 1.6rem; }
 }
 
-/* ── Home nav buttons (shown on profile page) ── */
-.section-nav {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  gap: 0.6rem;
-  margin-top: 1.5rem;
-}
-
-.section-nav-btn {
-  padding: 0.5rem 1.1rem;
-  background: var(--surface);
-  border: 1px solid var(--border);
-  border-radius: 999px;
-  font-size: 0.875rem;
-  font-weight: 600;
-  color: var(--text);
-  cursor: pointer;
-  transition: border-color 0.2s, background 0.2s, color 0.2s;
-}
-
-.section-nav-btn:hover {
-  border-color: var(--accent);
-  background: var(--accent-soft);
-  color: var(--accent);
-}
-
-/* ── Top tab bar (shown inside a section) ── */
+/* ── Top tab bar ── */
 .tab-bar {
-  display: none;
-  justify-content: center;
-  flex-wrap: wrap;
-  gap: 0.4rem;
-  padding-bottom: 1.5rem;
-  margin-bottom: 1.5rem;
-  border-bottom: 1px solid var(--border);
-}
-
-.tab-bar.visible {
   display: flex;
+  justify-content: center;
+  gap: 2rem;
+  border-bottom: 1px solid var(--border);
+  padding-bottom: 0;
 }
 
 .tab-btn {
-  padding: 0.45rem 1rem;
   background: transparent;
-  border: 1px solid transparent;
-  border-radius: 999px;
-  font-size: 0.85rem;
+  border: none;
+  border-bottom: 2px solid transparent;
+  padding: 0.75rem 0.25rem;
   font-weight: 600;
   color: var(--muted);
   cursor: pointer;
-  transition: all 0.2s;
-}
-
-.tab-btn:hover {
-  color: var(--accent);
+  border-radius: 0; /* remove pill shape */
 }
 
 .tab-btn.active {
-  background: var(--accent-soft);
-  border-color: rgba(108,142,251,0.25);
   color: var(--accent);
-}
-
-.tab-btn.home-btn {
-  color: var(--text);
-  border-color: var(--border);
+  border-bottom-color: var(--accent);
 }
 
 /* ── Page visibility ── */

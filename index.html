@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" data-theme="light">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -9,10 +9,11 @@
 <body>
 <div class="container">
 
-  <!-- ── Top tab bar: hidden on home, shown inside a section ── -->
+  <!-- ── Top tab bar ── -->
   <nav class="tab-bar" id="tabBar">
-    <button class="tab-btn home-btn" data-target="home">Home</button>
+    <button class="tab-btn active" data-target="home">Home</button>
     <button class="tab-btn" data-target="experience">Experience</button>
+    <button class="tab-btn" data-target="knowme">Get to know me</button>
   </nav>
 
     <!-- ── HOME / profile page ── -->
@@ -55,11 +56,6 @@
           Spotify
         </a>
       </nav>
-
-      <!-- Buttons leading into each section -->
-      <div class="section-nav">
-        <button class="section-nav-btn" data-target="experience">Experience</button>
-      </div>
     </header>
 
     <!-- ── About ── -->
@@ -67,7 +63,7 @@
       <h2>About</h2>
       <div class="card about">
         <p>Hi! I'm Josu. Biomedical engineer and PhD student, currently working as a researcher. I'm calm, meticulous, hard-working, and a decent programmer. I do my best to live consciously, mindful of others and the environment. I'm especially passionate about putting my skills at the service of the community and society. I enjoy reading, traveling, thinking things through, and also organizing stuff — sometimes a bit too much.</p>
-        <p>Please have a look around. If anything here resonates with you, or you think we could work on something together, feel free to reach out — I'd love to hear from you :)</p>
+        <p>Please have a look around. If anything here resonates with you, or you think we could work on something together, feel free to reach out — I'd love to hear from you :).</p>
       </div>
     </section>
   </div>
@@ -129,7 +125,7 @@
           <span class="skill-tag">Python</span>
         </div>
       </div>
-      <h2>Experience</h2>
+      <h2>Studies</h2>
       <div class="card">
         <div class="cv-entry">
           <span class="role">Predoctoral Researcher</span>
@@ -163,21 +159,66 @@
     document.querySelectorAll('.page').forEach(p => p.classList.remove('active'));
     document.getElementById('page-' + target).classList.add('active');
 
-    const tabBar = document.getElementById('tabBar');
-    if (target === 'home') {
-      tabBar.classList.remove('visible');
-    } else {
-      tabBar.classList.add('visible');
-    }
-
     document.querySelectorAll('.tab-btn').forEach(btn => {
-      btn.classList.toggle('active', btn.dataset.target === target && target !== 'home');
+      btn.classList.toggle('active', btn.dataset.target === target);
     });
   }
 
   document.querySelectorAll('[data-target]').forEach(el => {
     el.addEventListener('click', () => showPage(el.dataset.target));
   });
+
+  // ── Carousel ──
+  function initCarousel() {
+    const carousel = document.getElementById('knowmeCarousel');
+    if (!carousel) return;
+
+    const slides = carousel.querySelectorAll('.carousel-slide');
+    const dotsContainer = carousel.querySelector('.carousel-dots');
+    if (!slides.length) return;
+
+    let currentIndex = 0;
+    let timer = null;
+
+    // Build navigation dots dynamically
+    dotsContainer.innerHTML = '';
+    slides.forEach((_, i) => {
+      const dot = document.createElement('div');
+      dot.className = 'carousel-dot' + (i === 0 ? ' active' : '');
+      dot.addEventListener('click', () => goToSlide(i));
+      dotsContainer.appendChild(dot);
+    });
+
+    const dots = dotsContainer.querySelectorAll('.carousel-dot');
+
+    function goToSlide(index) {
+      slides[currentIndex].classList.remove('active');
+      dots[currentIndex]?.classList.remove('active');
+
+      currentIndex = (index + slides.length) % slides.length;
+
+      slides[currentIndex].classList.add('active');
+      dots[currentIndex]?.classList.add('active');
+    }
+
+    function startTimer() {
+      stopTimer();
+      timer = setInterval(() => {
+        goToSlide(currentIndex + 1);
+      }, 3500);
+    }
+
+    function stopTimer() {
+      if (timer) clearInterval(timer);
+    }
+
+    carousel.addEventListener('mouseenter', stopTimer);
+    carousel.addEventListener('mouseleave', startTimer);
+
+    startTimer();
+  }
+
+  initCarousel();
 </script>
 
 </body>
