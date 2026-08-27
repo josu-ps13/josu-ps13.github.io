@@ -33,7 +33,7 @@ body {
   font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
   line-height: 1.6;
   min-height: 100vh;
-  background-image: url('assets/background.jpg');
+  background-image: url('assets/images/background.jpg');
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
@@ -114,6 +114,10 @@ a:hover { text-decoration: underline; }
   opacity: 0.75;
 }
 
+[data-theme="dark"] .hero-meta-item img {
+  filter: invert(1);
+}
+
 .hero-meta-item a {
   color: var(--muted);
 }
@@ -159,6 +163,10 @@ a:hover { text-decoration: underline; }
   fill: currentColor;
 }
 
+[data-theme="dark"] .social-link img {
+  filter: invert(1);
+}
+
 /* Sections */
 section {
   margin-top: 2.5rem;
@@ -195,7 +203,6 @@ section h2 {
   grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
   gap: 0.75rem;
 }
-
 .gallery img {
   width: 100%;
   aspect-ratio: 4/3;
@@ -213,29 +220,67 @@ section h2 {
   padding: 1rem 0;
   border-bottom: 1px solid var(--border);
 }
-
 .cv-entry:first-child { padding-top: 0; }
 .cv-entry:last-child { border-bottom: none; padding-bottom: 0; }
-
 .cv-entry .role {
   font-weight: 600;
   font-size: 0.975rem;
 }
-
 .cv-entry .org {
   color: var(--accent);
   font-size: 0.875rem;
 }
-
 .cv-entry .period {
   color: var(--muted);
   font-size: 0.8rem;
 }
-
 .cv-entry .desc {
   color: var(--muted);
   font-size: 0.875rem;
   margin-top: 0.2rem;
+}
+
+/* Projects */
+.projects {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1rem;
+}
+.project-entry {
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+  padding: 0 0 1.25rem;
+  overflow: hidden;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+.project-entry:hover {
+  transform: scale(1.03);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+}
+.project-entry .project-thumb {
+  width: 100%;
+  aspect-ratio: 16/9;
+  object-fit: cover;
+  border-radius: 0;
+  border: none;
+  background: var(--surface);
+  display: block;
+}
+.project-entry h3 {
+  font-size: 0.975rem;
+  padding: 0 1.5rem;
+}
+.project-entry .desc {
+  color: var(--muted);
+  font-size: 0.875rem;
+  padding: 0 1.5rem;
+}
+
+@media (max-width: 480px) {
+  .projects {
+    grid-template-columns: 1fr;
+  }
 }
 
 /* Skills */
@@ -255,14 +300,13 @@ section h2 {
 }
 
 /* Get to know me */
-.knowme-top {
+.aboutme-top {
   display: flex;
   align-items: center;
   gap: 1.5rem;
   flex-wrap: wrap;
 }
-
-.knowme-photo {
+.aboutme-photo {
   width: 110px;
   height: 110px;
   border-radius: 50%;
@@ -271,32 +315,29 @@ section h2 {
   background: var(--surface);
   flex-shrink: 0;
 }
-
-.knowme-links {
-  flex: 1;
-  min-width: 0;
-}
-
-.knowme-slogan {
+.aboutme-slogan {
   color: var(--muted);
   font-size: 0.95rem;
   font-style: italic;
   margin-bottom: 0.75rem;
 }
-
-.knowme-socials {
+.aboutme-links {
+  flex: 1;
+  min-width: 0;
+}
+.aboutme-socials {
   justify-content: flex-start;
 }
 
 @media (max-width: 480px) {
-  .knowme-top {
+  .aboutme-top {
     flex-direction: column;
     text-align: center;
   }
-  .knowme-socials {
+  .aboutme-socials {
     justify-content: center;
   }
-  .knowme-links {
+  .aboutme-links {
     width: 100%;
   }
 }
@@ -307,28 +348,39 @@ section h2 {
   overflow: hidden;
 }
 .carousel-track {
-  position: relative;
+  display: flex;
   width: 100%;
   aspect-ratio: 16/9;
   background: var(--bg);
+  transition: transform 0.6s ease;
 }
 .carousel-slide {
-  position: absolute;
-  inset: 0;
+  flex: 0 0 100%;
   width: 100%;
   height: 100%;
   object-fit: cover;
-  opacity: 0;
-  transition: opacity 0.6s ease;
-}
-.carousel-slide.active {
-  opacity: 1;
 }
 .carousel-dots {
   display: flex;
   justify-content: center;
   gap: 0.4rem;
   padding: 0.75rem 0;
+}
+.carousel-caption {
+  flex: 0 0 100%;
+  min-width: 0;
+  box-sizing: border-box;
+  padding: 0;
+  color: var(--muted);
+  font-size: 0.875rem;
+  text-align: center;
+}
+.carousel-caption-viewport {
+  overflow: hidden;
+}
+.carousel-caption-track {
+  display: flex;
+  transition: transform 0.6s ease;
 }
 .carousel-dot {
   width: 7px;

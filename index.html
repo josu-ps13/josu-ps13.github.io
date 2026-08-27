@@ -7,120 +7,72 @@
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
+
+<!-- CONTENTS -------------------------------------------------------------- -->
+
 <div class="container">
 
-  <!-- ── Top tab bar ── -->
+  <!-- Top navigation bar -->
   <nav class="tab-bar" id="tabBar">
     <button class="tab-btn active" data-target="home">Home</button>
     <button class="tab-btn" data-target="experience">Experience</button>
-    <button class="tab-btn" data-target="knowme">Get to know me</button>
+    <button class="tab-btn" data-target="aboutme">About me</button>
   </nav>
 
-    <!-- ── HOME / profile page ── -->
+
+  <!-- HOME -->
   <div class="page active" id="page-home">
     <header class="hero">
-      <img class="avatar" src="assets/photo.jpg" alt="Josué" onerror="this.style.display='none'" />
-      <h1>Josué Pérez Sabater</h1>
-      <p class="tagline">Webpage under development... Please be patient!</p>
 
+      <!-- Photo + name -->
+      <img class="avatar" src="assets/images/photo.jpg" alt="Josué" onerror="this.style.display='none'" />
+      <h1>Josué Pérez Sabater</h1>
+
+      <!-- Info pills -->
       <ul class="hero-meta" aria-label="Personal details">
         <li class="hero-meta-item">
-          <img src="assets/icon-location.svg" alt="" width="16" height="16" />
+          <img src="assets/icons/location.svg" alt="" width="16" height="16" />
           Madrid, Spain
         </li>
         <li class="hero-meta-item">
-          <img src="assets/icon-mail.svg" alt="" width="16" height="16" />
+          <img src="assets/icons/mail.svg" alt="" width="16" height="16" />
           <a href="mailto:your@email.com">josu.ps13@gmail.com</a>
         </li>
         <li class="hero-meta-item">
-          <img src="assets/icon-work.svg" alt="" width="16" height="16" />
+          <img src="assets/icons/work.svg" alt="" width="16" height="16" />
           Predoctoral Researcher at UC3M
         </li>
       </ul>
 
+      <!-- Social pills -->
       <nav class="socials" aria-label="Social links">
         <a class="social-link" href="https://linkedin.com/in/josups13" target="_blank" rel="noopener">
-          <img src="assets/logo-linkedin.svg" alt="" width="16" height="16" />
-          LinkedIn
-        </a>
+          <img src="assets/icons/linkedin.svg" alt="" width="16" height="16" />LinkedIn</a>
         <a class="social-link" href="https://github.com/josu-ps13" target="_blank" rel="noopener">
-          <img src="assets/logo-github.svg" alt="" width="16" height="16" />
-          GitHub
-        </a>
-        <a class="social-link" href="https://josups13.notion.site/baul-de-demostenes" target="_blank" rel="noopener">
-          <img src="assets/logo-notion.svg" alt="" width="16" height="16" />
-          Blog
-        </a>
-        <a class="social-link" href="https://open.spotify.com/user/josu_ps13" target="_blank" rel="noopener">
-          <img src="assets/logo-spotify.svg" alt="" width="16" height="16" />
-          Spotify
-        </a>
+          <img src="assets/icons/github.svg" alt="" width="16" height="16" />GitHub</a>
       </nav>
     </header>
 
-    <!-- ── About ── -->
+    <!-- About -->
     <section>
       <h2>About</h2>
       <div class="card about">
-        <p>Hi! I'm Josu. Biomedical engineer and PhD student, currently working as a researcher. I'm calm, meticulous, hard-working, and a decent programmer. I do my best to live consciously, mindful of others and the environment. I'm especially passionate about putting my skills at the service of the community and society. I enjoy reading, traveling, thinking things through, and also organizing stuff — sometimes a bit too much.</p>
+        <p>Hi! I'm Josu. Biomedical engineer and PhD student, currently working as a researcher.
+          I'm calm, meticulous, hard-working, and a decent programmer.
+          I do my best to live consciously, mindful of others and the environment.
+          I'm especially passionate about putting my skills at the service of the community and society.
+          I enjoy reading, traveling, thinking things through, and also organizing stuff — sometimes a bit too much.</p>
         <p>Please have a look around. If anything here resonates with you, or you think we could work on something together, feel free to reach out — I'd love to hear from you :).</p>
       </div>
     </section>
   </div>
 
 
-  <!-- ── GET TO KNOW ME ── -->
-  <div class="page" id="page-knowme">
-    <section>
-      <h2>Get to know me</h2>
- 
-      <!-- Photo + social pills -->
-      <div class="card knowme-top">
-        <img class="knowme-photo" src="assets/photo.jpg" alt="Josué" onerror="this.style.display='none'" />
-        <div class="knowme-links">
-          <p class="knowme-slogan">scintilla novae humanitatis</p>
-          <nav class="socials knowme-socials" aria-label="Social links">
-            <a class="social-link" href="https://linkedin.com/in/josups13" target="_blank" rel="noopener">
-              <img src="assets/logo-linkedin.svg" alt="" width="16" height="16" />
-              LinkedIn
-            </a>
-            <a class="social-link" href="https://github.com/josu-ps13" target="_blank" rel="noopener">
-              <img src="assets/logo-github.svg" alt="" width="16" height="16" />
-              GitHub
-            </a>
-            <a class="social-link" href="https://josups13.notion.site/baul-de-demostenes" target="_blank" rel="noopener">
-              <img src="assets/logo-notion.svg" alt="" width="16" height="16" />
-              Blog
-            </a>
-            <a class="social-link" href="https://open.spotify.com/user/josu_ps13" target="_blank" rel="noopener">
-              <img src="assets/logo-spotify.svg" alt="" width="16" height="16" />
-              Spotify
-            </a>
-          </nav>
-        </div>
-      </div>
-
-      <!-- Auto-advancing carousel -->
-      <div class="card carousel" id="knowmeCarousel">
-        <div class="carousel-track">
-          <img class="carousel-slide active" src="assets/gallery-1.jpg" alt="" />
-          <img class="carousel-slide" src="assets/gallery-2.jpg" alt="" />
-          <img class="carousel-slide" src="assets/gallery-3.jpg" alt="" />
-        </div>
-        <div class="carousel-dots"></div>
-      </div>
- 
-      <!-- Text -->
-      <div class="card">
-        <p>Write a bit more about yourself here — hobbies, background, whatever you'd like people to know beyond the CV.</p>
-      </div>
-    </section>
-  </div>
-
-
-  <!-- ── EXPERIENCE ── -->
+  <!-- EXPERIENCE -->
   <div class="page" id="page-experience">
     <section>
+
+      <!-- Skill pills -->
       <h2>Skills</h2>
       <div class="card" style="margin-bottom: 1.25rem;">
         <div class="skills">
@@ -128,34 +80,125 @@
           <span class="skill-tag">Python</span>
         </div>
       </div>
-      <h2>Studies</h2>
-      <div class="card">
+
+      <!-- CV: work -->
+      <h2>Work</h2>
+      <div class="card" style="margin-bottom: 1.25rem;">
         <div class="cv-entry">
           <span class="role">Predoctoral Researcher</span>
           <span class="org">Universidad Carlos III de Madrid</span>
           <span class="period">Nov 2024 – Present</span>
           <span class="desc">Currently enrolled in a PhD Program in Signal Processing and Communications Engineering within the Signal Processing Group (GTS-UC3M) in the field of human behavior analysis. The work will be focused on the research and development of AI-based applications to predict the risk of suicidal behavior, among others.</span>
         </div>
+      </div>
+
+      <!-- CV: studies -->
+      <h2>Studies</h2>
+      <div class="card">
         <div class="cv-entry">
-          <span class="role">Master's degree · Machine Learning for Health</span>
+          <span class="role">Master's Degree on Machine Learning for Health</span>
           <span class="org">Universidad Carlos III de Madrid</span>
           <span class="period">2023 – 2024</span>
         </div>
         <div class="cv-entry">
-          <span class="role">Bachelor's degree · Biomedical Engineering</span>
+          <span class="role">Bachelor's Degree on Biomedical Engineering</span>
           <span class="org">Universidad Carlos III de Madrid</span>
           <span class="period">2018 – 2023</span>
+          <span class="desc">Graduated in Biomedical Engineering at UC3M where I learned about very diverse topics in the biomedical domain, including image processing, biosensors and tissue engineering. Some of the programs and languages I learned are: MATLAB, 3D Slicer, ImageJ, PyMOL, Chimera and RStudio. On top of the academic aspect, I also had the chance to study one year abroad at Hanyang University, Seoul, and to conduct two research works that gave me experience on spiking neural networks (internship at NISL) and compartmental modeling (Bachelor’s thesis).</span>
+        </div>
+        <div class="cv-entry">
+          <span class="role">Exchange Program</span>
+          <span class="org">Hanyang University</span>
+          <span class="period">2021 – 2022</span>
+          <span class="desc">I spent 10 months in Seoul as part of an international program studying and researching at Hanyang University. During my time abroad, I improved my English proficiency and gained important skills on adaptability, initiative and social abilities. On top of that, I was able to immerse myself in the Korean culture and therefore acquired an open mindset with a broader perspective.</span>
+        </div>
+        <div class="cv-entry">
+          <span class="role">PEAC · Complementary Education</span>
+          <span class="org">Instituto Juan de la Cierva</span>
+          <span class="period">2009 – 2016</span>
+          <span class="desc">During 7 years, I had the opportunity to participate in PEAC, a program developed by the Community of Madrid as a voluntary, free, complementary education that enriches the standard curriculum, providing students with an opportunity to experience, research and create. PEAC stimulates creativity and divergent thinking in different learning areas such as the scientific-technologic, artistic, humanistic-literary and social skills.</span>
         </div>
       </div>
     </section>
   </div>
 
 
-  <footer>
-    <p>© 2026 · Josué Pérez Sabater</p>
-  </footer>
+  <!-- ABOUT ME -->
+  <div class="page" id="page-aboutme">
+    <section>
+      <h2>Get to know me</h2>
+ 
+      <!-- Photo + slogan + social pills -->
+      <div class="card aboutme-top">
+        <img class="aboutme-photo" src="assets/images/photo.jpg" alt="Josué" onerror="this.style.display='none'" />
+        <div class="aboutme-links">
+          <p class="aboutme-slogan">scintilla novae humanitatis</p>
+          <nav class="socials aboutme-socials" aria-label="Social links">
+            <a class="social-link" href="https://linkedin.com/in/josups13" target="_blank" rel="noopener">
+              <img src="assets/icons/linkedin.svg" alt="" width="16" height="16" />LinkedIn</a>
+            <a class="social-link" href="https://github.com/josu-ps13" target="_blank" rel="noopener">
+              <img src="assets/icons/github.svg" alt="" width="16" height="16" />GitHub</a>
+            <a class="social-link" href="https://josups13.notion.site/baul-de-demostenes" target="_blank" rel="noopener">
+              <img src="assets/icons/notion.svg" alt="" width="16" height="16" />Blog</a>
+            <a class="social-link" href="https://open.spotify.com/user/josu_ps13" target="_blank" rel="noopener">
+              <img src="assets/icons/spotify.svg" alt="" width="16" height="16" />Spotify</a>
+            <a class="social-link" href="https://www.goodreads.com/user/show/171000480" target="_blank" rel="noopener">
+              <img src="assets/icons/goodreads.svg" alt="" width="16" height="16" />Goodreads</a>            
+          </nav>
+      </div>
 
+      <!-- Auto-advancing carousel -->
+      <div class="card carousel" id="aboutmeCarousel">
+        <div class="carousel-track">
+          <img class="carousel-slide" src="assets/images/gallery-1.jpg" alt="" data-caption="Isle of Skye, Scotland, after a hike with impressive views" />
+          <img class="carousel-slide" src="assets/images/gallery-2.jpg" alt="" data-caption="Observing a ladybug at Beopjusa Temple, South Korea" />
+          <img class="carousel-slide" src="assets/images/gallery-3.jpg" alt="" data-caption="Alicante skyline at sunset from Serra Grossa" />
+        </div>
+        <div class="carousel-caption-viewport">
+          <div class="carousel-caption-track" id="aboutmeCarouselCaption"></div>
+        </div>
+        <div class="carousel-dots"></div>
+      </div>
+ 
+      <!-- Text -->
+      <div class="about">
+        <p>Born in Alicante, raised in Madrid.
+          I'm drawn to nature, which probably fuels my desire to protect it.
+          I enjoy long hikes and deep travel, often finding beauty in the world around me.
+          I read often, think more, and write occasionally.
+          I sometimes organize stuff (or clean) just to calm myself.
+          Steady by nature, and guided by a quiet faith that shapes how I see things.</p>
+        <p>The Latin words <i>scintilla novae humanitatis</i>, <q>spark of a new humanity</q> (Pope Leo XIV), work for me as a guiding principle in my life:
+          an exhortation to observe the world, reach the truth within it, and transform it into a better place.</p>
+      </div>
+    </section>
+
+    <!-- Projects -->
+    <section>
+      <h2>Projects</h2>
+      <div class="projects">
+        <div class="card project-entry">
+          <a href="https://josups13.notion.site/baul-de-demostenes" target="_blank" rel="noopener">
+            <img class="project-thumb" src="assets/images/baul-de-demostenes.jpg" alt="Project 1" />
+          </a>
+          <h3><a href="https://josups13.notion.site/baul-de-demostenes" target="_blank" rel="noopener">Baúl de Demóstenes</a></h3>
+          <p class="desc">Repository with personal texts of a philosophical, social, ethical or opinion nature. Texts are in Spanish.</p>
+        </div>
+        <div class="card project-entry">
+          <a href="https://josups13.notion.site/earth-gallery" target="_blank" rel="noopener">
+            <img class="project-thumb" src="assets/images/earth-gallery.webp" alt="Project 2" />
+          </a>
+          <h3><a href="https://josups13.notion.site/earth-gallery" target="_blank" rel="noopener">Earth Gallery</a></h3>
+          <p class="desc">🌍 Earth Gallery is a collection of photographs that show the beauty of our Earth and everything on it.</p>
+        </div>
+      </div>
+    </section>
+  </div>
+
+  <footer><p>© 2026 · Josué Pérez Sabater</p></footer>
 </div>
+
+<!-- FUNCTIONS ------------------------------------------------------------- -->
 
 <script>
   function showPage(target) {
@@ -173,12 +216,25 @@
 
   // ── Carousel ──
   function initCarousel() {
-    const carousel = document.getElementById('knowmeCarousel');
+    const carousel = document.getElementById('aboutmeCarousel');
     if (!carousel) return;
 
+    const track = carousel.querySelector('.carousel-track');
     const slides = carousel.querySelectorAll('.carousel-slide');
     const dotsContainer = carousel.querySelector('.carousel-dots');
+    const captionTrack = document.getElementById('aboutmeCarouselCaption');
     if (!slides.length) return;
+
+    // Build one caption item per slide so it can slide in sync with the images
+    if (captionTrack) {
+      captionTrack.innerHTML = '';
+      slides.forEach(slide => {
+        const item = document.createElement('p');
+        item.className = 'carousel-caption';
+        item.textContent = slide.dataset.caption || '';
+        captionTrack.appendChild(item);
+      });
+    }
 
     let currentIndex = 0;
     let timer = null;
@@ -195,12 +251,13 @@
     const dots = dotsContainer.querySelectorAll('.carousel-dot');
 
     function goToSlide(index) {
-      slides[currentIndex].classList.remove('active');
       dots[currentIndex]?.classList.remove('active');
 
       currentIndex = (index + slides.length) % slides.length;
 
-      slides[currentIndex].classList.add('active');
+      const offset = `-${currentIndex * 100}%`;
+      track.style.transform = `translateX(${offset})`;
+      if (captionTrack) captionTrack.style.transform = `translateX(${offset})`;
       dots[currentIndex]?.classList.add('active');
     }
 
