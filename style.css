@@ -25,7 +25,7 @@
   --accent: #76c279;
   --accent-soft: rgba(125, 255, 127, 0.12);
   --text: #e8eaf0;
-  --muted: #869a83;
+  --muted: #c1dcbe;
 }
 
 body {
@@ -67,8 +67,8 @@ a:hover { text-decoration: underline; }
 }
 
 .avatar {
-  width: 110px;
-  height: 110px;
+  width: 170px;
+  height: 170px;
   border-radius: 50%;
   object-fit: cover;
   border: 3px solid var(--border);
@@ -309,7 +309,7 @@ section h2 {
 .aboutme-photo {
   width: 110px;
   height: 110px;
-  border-radius: 50%;
+  border-radius: 5%;
   object-fit: cover;
   border: 3px solid var(--border);
   background: var(--surface);
@@ -325,8 +325,21 @@ section h2 {
   flex: 1;
   min-width: 0;
 }
+.academic-contact {
+  display: flex;
+  flex-direction: column;
+  gap: 0.2rem;
+}
 .aboutme-socials {
   justify-content: flex-start;
+}
+
+.academic-profile-details {
+  margin-top: 1.25rem;
+  border-top: 1px solid var(--border);
+}
+.academic-profile-details .cv-entry:first-child {
+  padding-top: 1rem;
 }
 
 @media (max-width: 480px) {
@@ -347,7 +360,13 @@ section h2 {
   padding: 0;
   overflow: hidden;
 }
+.carousel-image-viewport {
+  position: relative;
+  overflow: hidden;
+}
 .carousel-track {
+  position: relative;
+  z-index: 0;
   display: flex;
   width: 100%;
   aspect-ratio: 16/9;
@@ -359,6 +378,39 @@ section h2 {
   width: 100%;
   height: 100%;
   object-fit: cover;
+  transition: transform 0.3s ease;
+}
+.carousel:hover .carousel-slide.active {
+  transform: scale(1.05);
+}
+.carousel-arrow {
+  position: absolute;
+  top: 50%;
+  z-index: 2;
+  width: 2.5rem;
+  height: 2.5rem;
+  border: 1px solid var(--border);
+  border-radius: 50%;
+  background: var(--surface);
+  color: var(--text);
+  cursor: pointer;
+  font-size: 1.5rem;
+  line-height: 1;
+  opacity: 0;
+  pointer-events: none;
+  transform: translateY(-50%);
+  transition: opacity 0.2s ease, background 0.2s ease;
+}
+.carousel-arrow-prev { left: 1rem; }
+.carousel-arrow-next { right: 1rem; }
+.carousel:hover .carousel-arrow,
+.carousel:focus-within .carousel-arrow {
+  opacity: 0.9;
+  pointer-events: auto;
+}
+.carousel-arrow:hover {
+  background: var(--border);
+  border-color: var(--accent);
 }
 .carousel-dots {
   display: flex;
@@ -370,7 +422,7 @@ section h2 {
   flex: 0 0 100%;
   min-width: 0;
   box-sizing: border-box;
-  padding: 0;
+  padding: 0.5rem 0 0;
   color: var(--muted);
   font-size: 0.875rem;
   text-align: center;

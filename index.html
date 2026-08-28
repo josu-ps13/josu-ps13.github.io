@@ -25,7 +25,7 @@
     <header class="hero">
 
       <!-- Photo + name -->
-      <img class="avatar" src="assets/images/photo.jpg" alt="Josué" onerror="this.style.display='none'" />
+      <img class="avatar" src="assets/images/me.jpg" alt="Josué" onerror="this.style.display='none'" />
       <h1>Josué Pérez Sabater</h1>
 
       <!-- Info pills -->
@@ -43,14 +43,6 @@
           Predoctoral Researcher at UC3M
         </li>
       </ul>
-
-      <!-- Social pills -->
-      <nav class="socials" aria-label="Social links">
-        <a class="social-link" href="https://linkedin.com/in/josups13" target="_blank" rel="noopener">
-          <img src="assets/icons/linkedin.svg" alt="" width="16" height="16" />LinkedIn</a>
-        <a class="social-link" href="https://github.com/josu-ps13" target="_blank" rel="noopener">
-          <img src="assets/icons/github.svg" alt="" width="16" height="16" />GitHub</a>
-      </nav>
     </header>
 
     <!-- About -->
@@ -70,17 +62,54 @@
 
   <!-- EXPERIENCE -->
   <div class="page" id="page-experience">
-    <section>
 
-      <!-- Skill pills -->
-      <h2>Skills</h2>
-      <div class="card" style="margin-bottom: 1.25rem;">
-        <div class="skills">
-          <span class="skill-tag">Active listening</span>
-          <span class="skill-tag">Python</span>
+    <!-- Academic profile -->
+    <section>
+      <h2>Academic profile</h2>
+
+      <!-- Photo, social pills, researcher details -->
+      <div class="card academic-profile" style="margin-bottom: 1.25rem;">
+        <div class="aboutme-top">
+          <img class="aboutme-photo" src="assets/images/me-professional.jpg" alt="Josué" onerror="this.style.display='none'" />
+          <div class="aboutme-links">
+            <div class="academic-contact">
+              <p class="hero-meta-item">
+                <img src="assets/icons/mail.svg" alt="" width="16" height="16" />
+                <a href="mailto:josue.perez@uc3m.es">josue.perez@uc3m.es</a>
+              </p>
+              <p class="hero-meta-item">
+                <img src="assets/icons/university.svg" alt="" width="16" height="16" />
+                Universidad Carlos III de Madrid, office 4.3.A03
+              </p>
+              <p class="hero-meta-item">
+                <img src="assets/icons/location.svg" alt="" width="16" height="16" />
+                <a href="https://maps.app.goo.gl/WKQ8PFNjDwJt6bup9" target="_blank" rel="noopener">Avenida de la Universidad, 30, 28911 Leganés, Spain</a>
+              </p>
+            </div>
+            <nav class="socials aboutme-socials" aria-label="Social links">
+              <a class="social-link" href="https://www.linkedin.com/in/josups13" target="_blank" rel="noopener">
+                <img src="assets/icons/linkedin.svg" alt="" width="16" height="16" />LinkedIn</a>
+              <a class="social-link" href="https://github.com/josu-ps13" target="_blank" rel="noopener">
+                <img src="assets/icons/github.svg" alt="" width="16" height="16" />GitHub</a>
+              <a class="social-link" href="https://scholar.google.com/citations?user=FpxVMOkAAAAJ" target="_blank" rel="noopener">
+                <img src="assets/icons/google-scholar.svg" alt="" width="16" height="16" />Google Scholar</a>
+            </nav>
+          </div>
+        </div>
+        <div class="academic-profile-details">
+          <div class="cv-entry">
+            <span class="role">ORCID</span>
+            <span class="desc">0009-0001-0442-3663</span>
+          </div>
+          <div class="cv-entry">
+            <span class="role">Curriculum Vitae</span>
+            <span class="desc"><a href="assets/cv.pdf" target="_blank" rel="noopener">Open CV</a></span>
+          </div>
         </div>
       </div>
+    </section>
 
+    <section>
       <!-- CV: work -->
       <h2>Work</h2>
       <div class="card" style="margin-bottom: 1.25rem;">
@@ -96,12 +125,13 @@
       <h2>Studies</h2>
       <div class="card">
         <div class="cv-entry">
-          <span class="role">Master's Degree on Machine Learning for Health</span>
+          <span class="role">Master in Machine Learning for Health</span>
           <span class="org">Universidad Carlos III de Madrid</span>
           <span class="period">2023 – 2024</span>
+          <span class="desc">I obtained this master’s to specialize in the use of AI tools, focusing their application on the processing of medical data, signals and images. Some of the fields explored include classic machine learning methods, deep learning networks, natural language processing, surgical navigation tools, optimization and computer vision. I conducted my master thesis under the GTS lab working on human behavior modeling for suicide prediction.</span>
         </div>
         <div class="cv-entry">
-          <span class="role">Bachelor's Degree on Biomedical Engineering</span>
+          <span class="role">Bachelor’s Degree in Biomedical Engineering</span>
           <span class="org">Universidad Carlos III de Madrid</span>
           <span class="period">2018 – 2023</span>
           <span class="desc">Graduated in Biomedical Engineering at UC3M where I learned about very diverse topics in the biomedical domain, including image processing, biosensors and tissue engineering. Some of the programs and languages I learned are: MATLAB, 3D Slicer, ImageJ, PyMOL, Chimera and RStudio. On top of the academic aspect, I also had the chance to study one year abroad at Hanyang University, Seoul, and to conduct two research works that gave me experience on spiking neural networks (internship at NISL) and compartmental modeling (Bachelor’s thesis).</span>
@@ -130,29 +160,32 @@
  
       <!-- Photo + slogan + social pills -->
       <div class="card aboutme-top">
-        <img class="aboutme-photo" src="assets/images/photo.jpg" alt="Josué" onerror="this.style.display='none'" />
+        <img class="aboutme-photo" src="assets/images/me.jpg" alt="Josué" onerror="this.style.display='none'" />
         <div class="aboutme-links">
           <p class="aboutme-slogan">scintilla novae humanitatis</p>
           <nav class="socials aboutme-socials" aria-label="Social links">
-            <a class="social-link" href="https://linkedin.com/in/josups13" target="_blank" rel="noopener">
-              <img src="assets/icons/linkedin.svg" alt="" width="16" height="16" />LinkedIn</a>
-            <a class="social-link" href="https://github.com/josu-ps13" target="_blank" rel="noopener">
-              <img src="assets/icons/github.svg" alt="" width="16" height="16" />GitHub</a>
             <a class="social-link" href="https://josups13.notion.site/baul-de-demostenes" target="_blank" rel="noopener">
               <img src="assets/icons/notion.svg" alt="" width="16" height="16" />Blog</a>
             <a class="social-link" href="https://open.spotify.com/user/josu_ps13" target="_blank" rel="noopener">
               <img src="assets/icons/spotify.svg" alt="" width="16" height="16" />Spotify</a>
             <a class="social-link" href="https://www.goodreads.com/user/show/171000480" target="_blank" rel="noopener">
               <img src="assets/icons/goodreads.svg" alt="" width="16" height="16" />Goodreads</a>            
+            <a class="social-link" href="https://letterboxd.com/josu_ps13/" target="_blank" rel="noopener">
+              <img src="assets/icons/letterboxd.svg" alt="" width="16" height="16" />Letterboxd</a>
           </nav>
       </div>
 
       <!-- Auto-advancing carousel -->
       <div class="card carousel" id="aboutmeCarousel">
-        <div class="carousel-track">
-          <img class="carousel-slide" src="assets/images/gallery-1.jpg" alt="" data-caption="Isle of Skye, Scotland, after a hike with impressive views" />
-          <img class="carousel-slide" src="assets/images/gallery-2.jpg" alt="" data-caption="Observing a ladybug at Beopjusa Temple, South Korea" />
-          <img class="carousel-slide" src="assets/images/gallery-3.jpg" alt="" data-caption="Alicante skyline at sunset from Serra Grossa" />
+        <div class="carousel-image-viewport">
+          <div class="carousel-track">
+            <img class="carousel-slide" src="assets/images/gallery-1.jpg" alt="" data-caption="Alicante at sunset from Serra Grossa" />
+            <img class="carousel-slide" src="assets/images/gallery-2.jpg" alt="" data-caption="Isle of Skye, Scotland, after a hike with impressive views" />
+            <img class="carousel-slide" src="assets/images/gallery-3.jpg" alt="" data-caption="In the middle of a forest in São Miguel, surrounded by tall trees" />
+            <img class="carousel-slide" src="assets/images/gallery-4.jpg" alt="" data-caption="Observing a ladybug at Beopjusa Temple, South Korea" />
+          </div>
+          <button class="carousel-arrow carousel-arrow-prev" type="button" aria-label="Previous image">&larr;</button>
+          <button class="carousel-arrow carousel-arrow-next" type="button" aria-label="Next image">&rarr;</button>
         </div>
         <div class="carousel-caption-viewport">
           <div class="carousel-caption-track" id="aboutmeCarouselCaption"></div>
@@ -162,12 +195,11 @@
  
       <!-- Text -->
       <div class="about">
-        <p>Born in Alicante, raised in Madrid.
-          I'm drawn to nature, which probably fuels my desire to protect it.
-          I enjoy long hikes and deep travel, often finding beauty in the world around me.
+        <p>Born in Alicante (Spain), raised in Madrid.
+          Steady and perfectionist by nature, I like organizing (or cleaning) stuff just to calm myself.
           I read often, think more, and write occasionally.
-          I sometimes organize stuff (or clean) just to calm myself.
-          Steady by nature, and guided by a quiet faith that shapes how I see things.</p>
+          I'm drawn to nature, which probably fuels my desire to protect it.
+          I enjoy long hikes and deep travel, often finding beauty in the world around me.</p>
         <p>The Latin words <i>scintilla novae humanitatis</i>, <q>spark of a new humanity</q> (Pope Leo XIV), work for me as a guiding principle in my life:
           an exhortation to observe the world, reach the truth within it, and transform it into a better place.</p>
       </div>
@@ -223,6 +255,8 @@
     const slides = carousel.querySelectorAll('.carousel-slide');
     const dotsContainer = carousel.querySelector('.carousel-dots');
     const captionTrack = document.getElementById('aboutmeCarouselCaption');
+    const previousButton = carousel.querySelector('.carousel-arrow-prev');
+    const nextButton = carousel.querySelector('.carousel-arrow-next');
     if (!slides.length) return;
 
     // Build one caption item per slide so it can slide in sync with the images
@@ -238,6 +272,7 @@
 
     let currentIndex = 0;
     let timer = null;
+    slides[0]?.classList.add('active');
 
     // Build navigation dots dynamically
     dotsContainer.innerHTML = '';
@@ -252,6 +287,7 @@
 
     function goToSlide(index) {
       dots[currentIndex]?.classList.remove('active');
+      slides[currentIndex]?.classList.remove('active');
 
       currentIndex = (index + slides.length) % slides.length;
 
@@ -259,7 +295,11 @@
       track.style.transform = `translateX(${offset})`;
       if (captionTrack) captionTrack.style.transform = `translateX(${offset})`;
       dots[currentIndex]?.classList.add('active');
+      slides[currentIndex]?.classList.add('active');
     }
+
+    previousButton?.addEventListener('click', () => goToSlide(currentIndex - 1));
+    nextButton?.addEventListener('click', () => goToSlide(currentIndex + 1));
 
     function startTimer() {
       stopTimer();
