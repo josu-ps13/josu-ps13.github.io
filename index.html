@@ -4,6 +4,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Josué Pérez Sabater</title>
+  <link rel="icon" type="image/svg+xml" href="assets/favicon.svg" id="site-favicon" />
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
@@ -358,6 +359,21 @@
   }
 
   initCarousel();
+
+  const favicon = document.getElementById('site-favicon');
+  function syncFavicon() {
+    const theme = document.documentElement.dataset.theme || 'light';
+    favicon.href = theme === 'dark' ? 'assets/favicon-dark.svg' : 'assets/favicon.svg';
+  }
+
+  const observer = new MutationObserver((mutations) => {
+    mutations.forEach((mutation) => {
+      if (mutation.attributeName === 'data-theme') syncFavicon();
+    });
+  });
+
+  observer.observe(document.documentElement, { attributes: true, attributeFilter: ['data-theme'] });
+  syncFavicon();
 </script>
 
 </body>
