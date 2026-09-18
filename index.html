@@ -129,8 +129,8 @@
       </div>
     </section>
 
+    <!-- CV: work -->
     <section>
-      <!-- CV: work -->
       <h2>Work</h2>
       <div class="card" style="margin-bottom: 1.25rem;">
         <div class="cv-entry">
@@ -154,19 +154,19 @@
           <span class="period">Feb – Jul 2022</span>
           <span class="desc">I was granted an internship at the <a href="https://www.anmokimlab.com/" target="_blank" rel="noopener noreferrer">Neural Circuits & Computation Lab</a> in Hanyang University,
             which develops computational models based on the neural circuit principles that govern sensorimotor systems in flying insects.
-            During my time here, I modeled a spiking neural network that simulates the central complex in flies, capable of responding to head direction changes.</span>
+            During my time at NCCL, I modeled a spiking neural network that simulates the central complex in flies, capable of responding to head direction changes.</span>
         </div>
       </div>
     </section>
 
+    <!-- CV: studies -->
     <section>
-      <!-- CV: studies -->
       <h2>Studies</h2>
       <div class="card">
         <div class="cv-entry">
           <span class="role">Master in Machine Learning for Health</span>
           <span class="org"><img class="cv-orglogo" src="assets/logos/uc3m.webp" alt="" /><span class="cv-orgname">Universidad Carlos III de Madrid</span></span>
-          <span class="period">2023 – 2024</span>
+          <span class="period">2023 – 2024 · <a href="https://www.uc3m.es/master/machine-learning-health" target="_blank" rel="noopener noreferrer">web</a></span>
           <span class="desc">I obtained this master’s to specialize in the use of AI tools, focusing their application on the processing of medical data, signals and images.
             Some of the fields explored include classic machine learning methods, deep learning networks, natural language processing, surgical navigation tools, optimization and computer vision.
             I conducted my master thesis under the GTS lab working on human behavior modeling for suicide prediction.</span>
@@ -174,7 +174,7 @@
         <div class="cv-entry">
           <span class="role">Bachelor’s Degree in Biomedical Engineering</span>
           <span class="org"><img class="cv-orglogo" src="assets/logos/uc3m.webp" alt="" /><span class="cv-orgname">Universidad Carlos III de Madrid</span></span>
-          <span class="period">2018 – 2023</span>
+          <span class="period">2018 – 2023 · <a href="https://www.uc3m.es/bachelor-degree/biomedical-engineering" target="_blank" rel="noopener noreferrer">web</a></span>
           <span class="desc">Graduated in Biomedical Engineering at UC3M where I learned about very diverse topics in the biomedical domain, including image processing, biosensors and tissue engineering.
             Some of the programs and languages I learned are: MATLAB, 3D Slicer, ImageJ, PyMOL, Chimera and RStudio.
             On top of the academic aspect, I also had the chance to study one year abroad at Hanyang University, Seoul, and to conduct two research works
@@ -198,8 +198,29 @@
         </div>
       </div>
     </section>
-  </div>
 
+    <!-- CV: teaching -->
+    <section>
+      <h2>Teaching</h2>
+      <div class="card">
+        <div class="cv-entry">
+          <span class="role">Bachelor in Data Science and Engineering</span>
+          <span class="org"><img class="cv-orglogo" src="assets/logos/uc3m.webp" alt="" /><span class="cv-orgname">Universidad Carlos III de Madrid</span></span>
+          <span class="desc">2025, 2026 · <a href="https://aplicaciones.uc3m.es/cpa/generaFicha?est=350&anio=2026&asig=16803&idioma=2" target="_blank" rel="noopener noreferrer">Machine Learning in Healthcare</a> · Laboratories sessions about survival analysis, point processes and multi-view VAEs.</span>
+        </div>
+        <div class="cv-entry">
+          <span class="role">Master in Applied Artificial Intelligence</span>
+          <span class="org"><img class="cv-orglogo" src="assets/logos/uc3m.webp" alt="" /><span class="cv-orgname">Universidad Carlos III de Madrid</span></span>
+          <span class="desc">2025 · <a href="https://aplicaciones.uc3m.es/cpa/generaFicha?est=378&anio=2025&asig=19216&idioma=2" target="_blank" rel="noopener noreferrer">AI in Health</a> · Laboratories sessions about survival analysis and point processes.</span>
+        </div>
+        <div class="cv-entry">
+          <span class="role">Aprendizaje automático intermedio e ingeniería de características</span>
+          <span class="org"><img class="cv-orglogo" src="assets/logos/uc3m.webp" alt="" /><span class="cv-orgname">Universidad Carlos III de Madrid</span></span>
+          <span class="desc">2026 · Tutoring sessions for an online course aimed at BBVA employees to develop skills in machine learning and feature engineering.</span>
+        </div>
+      </div>
+    </section>
+  </div>
 
   <!-- ABOUT ME -->
   <div class="page" id="page-aboutme">
@@ -298,15 +319,20 @@
   function showPage(target) {
     document.querySelectorAll('.page').forEach(p => p.classList.remove('active'));
     document.getElementById('page-' + target).classList.add('active');
-
     document.querySelectorAll('.tab-btn').forEach(btn => {
       btn.classList.toggle('active', btn.dataset.target === target);
     });
+    localStorage.setItem('activePage', target);
   }
 
   document.querySelectorAll('[data-target]').forEach(el => {
     el.addEventListener('click', () => showPage(el.dataset.target));
   });
+
+  const savedPage = localStorage.getItem('activePage');
+  if (savedPage && document.getElementById('page-' + savedPage)) {
+    showPage(savedPage);
+  }
 
   // ── Carousel ──
   function initCarousel() {
