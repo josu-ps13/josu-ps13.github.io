@@ -476,6 +476,34 @@ footer {
   padding-bottom: 0;
 }
 
+.scroll-tab-bar {
+  position: fixed;
+  top: 0;
+  left: 50%;
+  z-index: 10;
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+  width: min(calc(100% - 2rem), 720px);
+  padding: 0 1rem;
+  background: var(--container-bg);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.12);
+  opacity: 0;
+  pointer-events: none;
+  transform: translate(-50%, -0.75rem);
+  transition: opacity 0.2s ease, transform 0.2s ease;
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+}
+
+.scroll-tab-bar.is-visible {
+  opacity: 1;
+  pointer-events: auto;
+  transform: translate(-50%, 0);
+}
+
 .tab-btn {
   background: transparent;
   border: none;

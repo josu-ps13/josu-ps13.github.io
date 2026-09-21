@@ -313,6 +313,12 @@
   <footer><p>© 2026 · Josué Pérez Sabater</p></footer>
 </div>
 
+<nav class="scroll-tab-bar" id="scrollTabBar" aria-label="Page navigation">
+  <button class="tab-btn active" data-target="home">Home</button>
+  <button class="tab-btn" data-target="experience">Experience</button>
+  <button class="tab-btn" data-target="aboutme">About me</button>
+</nav>
+
 <!-- FUNCTIONS ------------------------------------------------------------- -->
 
 <script>
@@ -322,6 +328,7 @@
     document.querySelectorAll('.tab-btn').forEach(btn => {
       btn.classList.toggle('active', btn.dataset.target === target);
     });
+    window.scrollTo({ top: 0, behavior: 'auto' });
     localStorage.setItem('activePage', target);
   }
 
@@ -333,6 +340,16 @@
   if (savedPage && document.getElementById('page-' + savedPage)) {
     showPage(savedPage);
   }
+
+  const tabBar = document.getElementById('tabBar');
+  const scrollTabBar = document.getElementById('scrollTabBar');
+  function syncScrollTabBar() {
+    const tabBarBottom = tabBar.offsetTop + tabBar.offsetHeight;
+    scrollTabBar.classList.toggle('is-visible', window.scrollY > tabBarBottom);
+  }
+
+  window.addEventListener('scroll', syncScrollTabBar, { passive: true });
+  syncScrollTabBar();
 
   // ── Carousel ──
   function initCarousel() {
