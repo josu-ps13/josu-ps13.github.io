@@ -194,6 +194,7 @@ section h2 {
   color: var(--text);
   font-size: 0.975rem;
   margin-bottom: 0.75rem;
+  text-align: left;
 }
 .about p:last-child { margin-bottom: 0; }
 
@@ -338,6 +339,7 @@ section h2 {
   display: flex;
   flex-direction: column;
   gap: 0.2rem;
+  text-align: left;
 }
 .aboutme-socials {
   justify-content: flex-start;

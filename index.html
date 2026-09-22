@@ -106,8 +106,8 @@
             <p>My <b>programming experience</b> includes the analysis and modeling of human behavior in the context of suicide prevention,
               compartmental modeling of intracranial pulsatility, and the simulation of brain structures through spiking neural networks.</p>
             <div class="skills" aria-label="Skills" style="margin-top: 0.6rem;">
-              <span class="skill-tag">Data analysis</span>
-              <span class="skill-tag">Scientific writing</span>
+              <span class="skill-tag">data analysis</span>
+              <span class="skill-tag">scientific writing</span>
               <span class="skill-tag">Python</span>
               <span class="skill-tag">MATLAB</span>
             </div>
@@ -220,6 +220,19 @@
         </div>
       </div>
     </section>
+
+    <!-- CV: other -->
+    <section id="experience-other">
+      <h2>Other</h2>
+      <div class="card">
+        <div class="cv-entry">
+          <span class="role">Datathon InCa</span>
+          <span class="org"><img class="cv-orglogo" src="assets/logos/isciii.png" alt="" /><span class="cv-orgname">Instituto de Salud Carlos III</span></span>
+          <span class="desc">I participated in a collaborative challenge jointly organized by the World Health Organization, the Spanish Ministry of Health, and Instituto de Salud Carlos III
+            with the goal of harmonizing databases of healthcare systems belonging to different regions and generating a common score of patient complexity.</span>
+        </div>
+      </div>
+    </section>
   </div>
 
   <!-- ABOUT ME -->
@@ -313,18 +326,21 @@
   <footer><p>© 2026 · Josué Pérez Sabater</p></footer>
 </div>
 
+<!-- Floating top tab bar -->
 <nav class="scroll-tab-bar" id="scrollTabBar" aria-label="Page navigation">
   <button class="tab-btn active" data-target="home">Home</button>
   <button class="tab-btn" data-target="experience">Experience</button>
   <button class="tab-btn" data-target="aboutme">About me</button>
 </nav>
 
+<!-- Floating contents button -->
 <div class="floating-contents" id="floatingContents">
   <div class="floating-contents-menu" id="floatingContentsMenu" role="menu" aria-label="Experience sections">
     <button type="button" class="floating-contents-link" data-section="experience-profile" role="menuitem">profile</button>
     <button type="button" class="floating-contents-link" data-section="experience-work" role="menuitem">work</button>
     <button type="button" class="floating-contents-link" data-section="experience-studies" role="menuitem">studies</button>
     <button type="button" class="floating-contents-link" data-section="experience-teaching" role="menuitem">teaching</button>
+    <button type="button" class="floating-contents-link" data-section="experience-other" role="menuitem">other</button>
   </div>
   <button type="button" class="floating-contents-trigger" id="floatingContentsTrigger" aria-expanded="false" aria-controls="floatingContentsMenu">sections</button>
 </div>
