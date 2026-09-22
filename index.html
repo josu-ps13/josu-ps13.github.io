@@ -66,7 +66,7 @@
   <div class="page" id="page-experience">
 
     <!-- Academic profile -->
-    <section>
+    <section id="experience-profile">
       <h2>Academic profile</h2>
 
       <!-- Photo, social pills, researcher details -->
@@ -130,7 +130,7 @@
     </section>
 
     <!-- CV: work -->
-    <section>
+    <section id="experience-work">
       <h2>Work</h2>
       <div class="card" style="margin-bottom: 1.25rem;">
         <div class="cv-entry">
@@ -160,7 +160,7 @@
     </section>
 
     <!-- CV: studies -->
-    <section>
+    <section id="experience-studies">
       <h2>Studies</h2>
       <div class="card">
         <div class="cv-entry">
@@ -200,7 +200,7 @@
     </section>
 
     <!-- CV: teaching -->
-    <section>
+    <section id="experience-teaching">
       <h2>Teaching</h2>
       <div class="card">
         <div class="cv-entry">
@@ -319,6 +319,16 @@
   <button class="tab-btn" data-target="aboutme">About me</button>
 </nav>
 
+<div class="floating-contents" id="floatingContents">
+  <div class="floating-contents-menu" id="floatingContentsMenu" role="menu" aria-label="Experience sections">
+    <button type="button" class="floating-contents-link" data-section="experience-profile" role="menuitem">profile</button>
+    <button type="button" class="floating-contents-link" data-section="experience-work" role="menuitem">work</button>
+    <button type="button" class="floating-contents-link" data-section="experience-studies" role="menuitem">studies</button>
+    <button type="button" class="floating-contents-link" data-section="experience-teaching" role="menuitem">teaching</button>
+  </div>
+  <button type="button" class="floating-contents-trigger" id="floatingContentsTrigger" aria-expanded="false" aria-controls="floatingContentsMenu">sections</button>
+</div>
+
 <!-- FUNCTIONS ------------------------------------------------------------- -->
 
 <script>
@@ -343,13 +353,50 @@
 
   const tabBar = document.getElementById('tabBar');
   const scrollTabBar = document.getElementById('scrollTabBar');
+  const floatingContents = document.getElementById('floatingContents');
+  const floatingContentsTrigger = document.getElementById('floatingContentsTrigger');
+  const floatingContentsMenu = document.getElementById('floatingContentsMenu');
+
+  function closeExperienceContents() {
+    floatingContents.classList.remove('is-open');
+    floatingContentsTrigger.setAttribute('aria-expanded', 'false');
+  }
+
+  function syncExperienceContents() {
+    const tabBarBottom = tabBar.offsetTop + tabBar.offsetHeight;
+    const isVisible = document.getElementById('page-experience').classList.contains('active') && window.scrollY > tabBarBottom;
+    floatingContents.classList.toggle('is-visible', isVisible);
+    if (!isVisible) closeExperienceContents();
+  }
+
   function syncScrollTabBar() {
     const tabBarBottom = tabBar.offsetTop + tabBar.offsetHeight;
     scrollTabBar.classList.toggle('is-visible', window.scrollY > tabBarBottom);
+    syncExperienceContents();
   }
 
   window.addEventListener('scroll', syncScrollTabBar, { passive: true });
   syncScrollTabBar();
+
+  floatingContentsTrigger.addEventListener('click', () => {
+    const isOpen = floatingContents.classList.toggle('is-open');
+    floatingContentsTrigger.setAttribute('aria-expanded', String(isOpen));
+  });
+
+  document.querySelectorAll('.floating-contents-link').forEach(link => {
+    link.addEventListener('click', () => {
+      document.getElementById(link.dataset.section).scrollIntoView({ behavior: 'smooth', block: 'start' });
+      closeExperienceContents();
+    });
+  });
+
+  document.addEventListener('click', event => {
+    if (!floatingContents.contains(event.target)) closeExperienceContents();
+  });
+
+  document.addEventListener('keydown', event => {
+    if (event.key === 'Escape') closeExperienceContents();
+  });
 
   // ── Carousel ──
   function initCarousel() {

@@ -504,6 +504,95 @@ footer {
   transform: translate(-50%, 0);
 }
 
+.floating-contents {
+  position: fixed;
+  right: 1rem;
+  bottom: 1rem;
+  z-index: 10;
+  display: none;
+}
+
+.floating-contents.is-visible {
+  display: block;
+}
+
+.floating-contents-trigger,
+.floating-contents-link {
+  border: 1px solid var(--border);
+  background: var(--container-bg);
+  color: var(--text);
+  cursor: pointer;
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+}
+
+.floating-contents-trigger {
+  min-width: 6rem;
+  padding: 0.6rem 0.9rem;
+  border-radius: 8px;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.12);
+  font: inherit;
+  font-size: 0.85rem;
+  font-weight: 650;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--muted);
+}
+
+.floating-contents-menu {
+  position: absolute;
+  right: 0;
+  bottom: calc(100% + 0.5rem);
+  display: grid;
+  min-width: 10rem;
+  padding: 0.35rem;
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  background: var(--container-bg);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.12);
+  opacity: 0;
+  pointer-events: none;
+  transform: translateY(0.25rem);
+  transition: opacity 0.15s ease, transform 0.15s ease;
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+}
+
+.floating-contents.is-open .floating-contents-menu {
+  opacity: 1;
+  pointer-events: auto;
+  transform: translateY(0);
+}
+
+.floating-contents-link {
+  width: 100%;
+  padding: 0.55rem 0.7rem;
+  background: transparent;
+  border-color: transparent;
+  border-radius: 5px;
+  font: inherit;
+  font-size: 0.7rem;
+  font-weight: 600;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--muted);
+  text-align: left;
+  backdrop-filter: none;
+  -webkit-backdrop-filter: none;
+}
+
+.floating-contents-trigger:hover,
+.floating-contents-link:hover,
+.floating-contents-link:focus-visible {
+  border-color: var(--accent);
+  background: var(--accent-soft);
+  color: var(--accent);
+}
+
+#page-experience section {
+  scroll-margin-top: 1rem;
+}
+
 .tab-btn {
   background: transparent;
   border: none;
