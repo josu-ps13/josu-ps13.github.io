@@ -241,7 +241,7 @@ section h2 {
   object-fit: contain;
   flex-shrink: 0;
 }
-.cv-entry .period {
+.cv-entry .details {
   color: var(--muted);
   font-size: 0.8rem;
 }
