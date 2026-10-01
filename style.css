@@ -56,7 +56,8 @@ a:hover { text-decoration: underline; }
   -webkit-backdrop-filter: blur(10px);
 }
 
-/* Hero */
+/* -- Hero -------------------------- */
+
 .hero {
   display: flex;
   flex-direction: column;
@@ -128,7 +129,8 @@ a:hover { text-decoration: underline; }
   text-decoration: underline;
 }
 
-/* Social links */
+/* -- Social links ------------------ */
+
 .socials {
   display: flex;
   flex-wrap: wrap;
@@ -168,7 +170,8 @@ a:hover { text-decoration: underline; }
   filter: invert(1);
 }
 
-/* Sections */
+/* -- Sections ---------------------- */
+
 section {
   margin-top: 2.5rem;
 }
@@ -189,7 +192,8 @@ section h2 {
   padding: 1.25rem 1.5rem;
 }
 
-/* About */
+/* -- About ------------------------- */
+
 .about p {
   color: var(--text);
   font-size: 0.975rem;
@@ -199,7 +203,8 @@ section h2 {
 .about p:last-child { margin-bottom: 0; }
 
 
-/* Gallery */
+/* -- Gallery ----------------------- */
+
 .gallery {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
@@ -214,7 +219,8 @@ section h2 {
   background: var(--surface);
 }
 
-/* Experience */
+/* -- Experience --------------------- */
+
 .cv-entry {
   display: flex;
   flex-direction: column;
@@ -250,7 +256,116 @@ section h2 {
   font-size: 0.875rem;
   margin-top: 0.2rem;
 }
-/* Projects */
+
+.entry-list > .cv-entry:nth-child(n + 4) {
+  display: none;
+}
+
+/* -- See more dialog --------------- */
+
+.see-more-button {
+  margin-top: 0.75rem;
+  padding: 0.35rem 0.75rem;
+  border: 1px solid var(--muted);
+  border-radius: 6px;
+  background: var(--muted);
+  color: var(--surface);
+  cursor: pointer;
+  font: inherit;
+  font-size: 0.875rem;
+  font-weight: 600;
+  transition: filter 0.15s ease;
+}
+.see-more-button:hover {
+  filter: brightness(0.92);
+}
+.see-more-button:focus-visible {
+  outline: 3px solid var(--accent);
+  outline-offset: 2px;
+}
+html.dialog-open {
+  overflow: hidden;
+}
+.entries-dialog {
+  width: min(42rem, calc(100% - 2rem));
+  max-width: none;
+  max-height: min(80vh, 52rem);
+  margin: auto;
+  padding: 0;
+  overflow: hidden;
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  background: var(--surface);
+  color: var(--text);
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.28);
+}
+.entries-dialog::backdrop {
+  background: rgba(0, 0, 0, 0.58);
+  backdrop-filter: blur(3px);
+}
+.entries-dialog-panel {
+  max-height: min(80vh, 52rem);
+  overflow-y: auto;
+  overscroll-behavior: contain;
+  padding: 1.25rem 1.5rem;
+}
+.entries-dialog-header {
+  position: sticky;
+  top: -1.25rem;
+  z-index: 1;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  margin: -1.25rem -1.5rem 0.5rem;
+  padding: 1.25rem 1.5rem 0.75rem;
+  border-bottom: 1px solid var(--border);
+  background: var(--surface);
+}
+.entries-dialog-header h2 {
+  margin: 0;
+  color: var(--muted);
+  font-size: 0.8rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+.entries-dialog-close {
+  flex: 0 0 auto;
+  padding: 0.4rem 0.7rem;
+  border: 1px solid var(--muted);
+  border-radius: 6px;
+  background: var(--muted);
+  color: var(--surface);
+  cursor: pointer;
+  font: inherit;
+  font-size: 0.8rem;
+  transition: filter 0.15s ease;
+}
+.entries-dialog-close:hover {
+  filter: brightness(0.92);
+}
+.entries-dialog-close:focus-visible {
+  outline: 3px solid var(--accent);
+  outline-offset: 2px;
+}
+.entries-dialog-content .cv-entry:last-child {
+  border-bottom: 0;
+}
+
+@media (max-width: 480px) {
+  .entries-dialog-panel {
+    padding: 1rem;
+  }
+  .entries-dialog-header {
+    top: -1rem;
+    margin: -1rem -1rem 0.5rem;
+    padding: 1rem 1rem 0.65rem;
+  }
+}
+
+/* -- Projects ---------------------- */
+
 .projects {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
@@ -293,7 +408,8 @@ section h2 {
   }
 }
 
-/* Skills */
+/* -- Skills ------------------------ */
+
 .skills {
   display: flex;
   flex-wrap: wrap;
@@ -309,7 +425,8 @@ section h2 {
   color: var(--accent);
 }
 
-/* Get to know me */
+/* -- Get to know me ---------------- */
+
 .aboutme-top {
   display: flex;
   align-items: center;
@@ -366,7 +483,8 @@ section h2 {
   }
 }
 
-/* Carousel */
+/* -- Carousel ---------------------- */
+
 .carousel {
   padding: 0;
   overflow: hidden;
@@ -457,7 +575,8 @@ section h2 {
   background: var(--accent);
 }
 
-/* Footer */
+/* -- Footer ------------------------ */
+
 footer {
   text-align: center;
   color: var(--muted);
@@ -469,7 +588,8 @@ footer {
   .hero h1 { font-size: 1.6rem; }
 }
 
-/* ── Top tab bar ── */
+/* -- Top tab bar ------------------- */
+
 .tab-bar {
   display: flex;
   justify-content: center;
@@ -505,6 +625,8 @@ footer {
   pointer-events: auto;
   transform: translate(-50%, 0);
 }
+
+/* -- Floating contents ------------- */
 
 .floating-contents {
   position: fixed;
@@ -611,7 +733,8 @@ footer {
   border-bottom-color: var(--accent);
 }
 
-/* ── Page visibility ── */
+/* -- Page visibility ----------------- */
+
 .page {
   display: none;
 }

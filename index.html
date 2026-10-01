@@ -28,7 +28,7 @@
       <!-- Photo + name + tagline -->
       <img class="avatar" src="assets/images/me.jpg" alt="Josué" onerror="this.style.display='none'" />
       <h1>Josué Pérez Sabater</h1>
-      <p class="tagline"><a href="https://hihello.com/p/71d9b01e-5d6f-4ee2-8d6a-b877e3371024" target="_blank" rel="noopener noreferrer">@josu_ps13</a></p>
+      <p class="tagline">/xoˈswe/ · <a href="https://hihello.com/p/71d9b01e-5d6f-4ee2-8d6a-b877e3371024" target="_blank" rel="noopener noreferrer">@josu_ps13</a></p>
     
       <!-- Info pills -->
       <ul class="hero-meta" aria-label="Personal details">
@@ -51,7 +51,8 @@
     <section>
       <h2>About</h2>
       <div class="card about">
-        <p>Hi! I'm Josu. Biomedical engineer and PhD student, currently working as a researcher.
+        <p>Hi! I'm <b>Josu</b>.</p>
+        <p>I'm a biomedical engineer and PhD student, currently working as a researcher.
           I'm calm, meticulous, hard-working, and a decent programmer.
           I do my best to live consciously, mindful of others and the environment,
           and always caring about putting my skills at the service of the community and society.
@@ -132,7 +133,7 @@
     <!-- CV: work -->
     <section id="experience-work">
       <h2>Work</h2>
-      <div class="card" style="margin-bottom: 1.25rem;">
+      <div class="card entry-list" style="margin-bottom: 1.25rem;">
         <div class="cv-entry">
           <span class="role">Predoctoral Researcher</span>
           <span class="org"><img class="cv-orglogo" src="assets/logos/uc3m.webp" alt="" /><span class="cv-orgname">Universidad Carlos III de Madrid</span></span>
@@ -162,7 +163,7 @@
     <!-- CV: studies -->
     <section id="experience-studies">
       <h2>Studies</h2>
-      <div class="card">
+      <div class="card entry-list">
         <div class="cv-entry">
           <span class="role">Master in Machine Learning for Health</span>
           <span class="org"><img class="cv-orglogo" src="assets/logos/uc3m.webp" alt="" /><span class="cv-orgname">Universidad Carlos III de Madrid</span></span>
@@ -202,7 +203,7 @@
     <!-- CV: teaching -->
     <section id="experience-teaching">
       <h2>Teaching</h2>
-      <div class="card">
+      <div class="card entry-list">
         <div class="cv-entry">
           <span class="role">Bachelor in Data Science and Engineering</span>
           <span class="org"><img class="cv-orglogo" src="assets/logos/uc3m.webp" alt="" /><span class="cv-orgname">Universidad Carlos III de Madrid</span></span>
@@ -228,14 +229,14 @@
         <div class="cv-entry">
           <span class="role">Datathon InCa</span>
           <span class="org"><img class="cv-orglogo" src="assets/logos/isciii.png" alt="" /><span class="cv-orgname">Instituto de Salud Carlos III</span></span>
-          <span class="details">16–18 Jun 2026 · Madrid · <a href="https://www.sanidad.gob.es/gabinete/notasPrensa.do?id=6940" target="_blank" rel="noopener noreferrer">news</a></span>
+          <span class="details">16–18 Jun 2026 · Madrid, Spain · <a href="https://www.sanidad.gob.es/gabinete/notasPrensa.do?id=6940" target="_blank" rel="noopener noreferrer">news</a></span>
           <span class="desc">I participated in a collaborative challenge jointly organized by the World Health Organization, the Spanish Ministry of Health, and Instituto de Salud Carlos III
             with the goal of harmonizing databases of healthcare systems belonging to different regions and generating a common score of patient complexity.</span>
         </div>
         <div class="cv-entry">
           <span class="role">Machine Learning Summer School</span>
           <span class="org"><img class="cv-orglogo" src="assets/logos/ucsp.png" alt="" /><span class="cv-orgname">Universidad Católica San Pablo</span></span>
-          <span class="details">2–13 Aug 2025 · Arequipa · <a href="assets/docs/mlss-certificate.pdf" target="_blank" rel="noopener noreferrer">certificate</a>
+          <span class="details">2–13 Aug 2025 · Arequipa, Peru · <a href="assets/docs/mlss-certificate.pdf" target="_blank" rel="noopener noreferrer">certificate</a>
             · <a href="assets/docs/mlss-poster.pdf" target="_blank" rel="noopener noreferrer">poster</a></span>
           <span class="desc">MLSS 2025 featured lectures from renowned academics and professionals on core and advanced machine learning concepts,
             such as representation learning, diffusion, explainable AI and reinforcement learning. This event also provided a platform to connect
@@ -271,10 +272,10 @@
       <div class="card carousel" id="aboutmeCarousel">
         <div class="carousel-image-viewport">
           <div class="carousel-track">
-            <img class="carousel-slide" src="assets/images/gallery-1.jpg" alt="" data-caption="Alicante at sunset from Serra Grossa" />
-            <img class="carousel-slide" src="assets/images/gallery-2.jpg" alt="" data-caption="Isle of Skye, Scotland, after a hike with impressive views" />
-            <img class="carousel-slide" src="assets/images/gallery-3.jpg" alt="" data-caption="In the middle of a forest in São Miguel, surrounded by tall trees" />
-            <img class="carousel-slide" src="assets/images/gallery-4.jpg" alt="" data-caption="Observing a ladybug at Beopjusa Temple, South Korea" />
+            <img class="carousel-slide" src="assets/images/gallery-1.jpg" alt="" data-caption="Alicante at sunset from Serra Grossa." />
+            <img class="carousel-slide" src="assets/images/gallery-2.jpg" alt="" data-caption="Isle of Skye, Scotland, after a hike with impressive views." />
+            <img class="carousel-slide" src="assets/images/gallery-3.jpg" alt="" data-caption="In the middle of a forest in São Miguel, surrounded by tall trees." />
+            <img class="carousel-slide" src="assets/images/gallery-4.jpg" alt="" data-caption="Observing a ladybug at Beopjusa Temple, South Korea." />
           </div>
           <button class="carousel-arrow carousel-arrow-prev" type="button" aria-label="Previous image">&larr;</button>
           <button class="carousel-arrow carousel-arrow-next" type="button" aria-label="Next image">&rarr;</button>
@@ -355,6 +356,16 @@
   <button type="button" class="floating-contents-trigger" id="floatingContentsTrigger" aria-expanded="false" aria-controls="floatingContentsMenu">sections</button>
 </div>
 
+<dialog class="entries-dialog" id="entriesDialog" aria-labelledby="entriesDialogTitle">
+  <div class="entries-dialog-panel">
+    <header class="entries-dialog-header">
+      <h2 id="entriesDialogTitle"></h2>
+      <button type="button" class="entries-dialog-close" id="entriesDialogClose">Close</button>
+    </header>
+    <div class="entries-dialog-content" id="entriesDialogContent"></div>
+  </div>
+</dialog>
+
 <!-- FUNCTIONS ------------------------------------------------------------- -->
 
 <script>
@@ -382,6 +393,38 @@
   const floatingContents = document.getElementById('floatingContents');
   const floatingContentsTrigger = document.getElementById('floatingContentsTrigger');
   const floatingContentsMenu = document.getElementById('floatingContentsMenu');
+  const entriesDialog = document.getElementById('entriesDialog');
+  const entriesDialogTitle = document.getElementById('entriesDialogTitle');
+  const entriesDialogContent = document.getElementById('entriesDialogContent');
+
+  document.querySelectorAll('.entry-list').forEach(entryList => {
+    const entries = entryList.querySelectorAll(':scope > .cv-entry');
+    if (entries.length <= 3) return;
+
+    const button = document.createElement('button');
+    button.type = 'button';
+    button.className = 'see-more-button';
+    button.dataset.entriesSection = entryList.closest('section').id;
+    button.textContent = 'See more';
+    entryList.appendChild(button);
+  });
+
+  document.querySelectorAll('.see-more-button').forEach(button => {
+    button.addEventListener('click', () => {
+      const section = document.getElementById(button.dataset.entriesSection);
+      const entries = section.querySelectorAll('.entry-list > .cv-entry');
+      entriesDialogTitle.textContent = section.querySelector('h2').textContent;
+      entriesDialogContent.replaceChildren(...Array.from(entries, entry => entry.cloneNode(true)));
+      entriesDialog.showModal();
+      document.documentElement.classList.add('dialog-open');
+    });
+  });
+
+  entriesDialog.addEventListener('close', () => document.documentElement.classList.remove('dialog-open'));
+  document.getElementById('entriesDialogClose').addEventListener('click', () => entriesDialog.close());
+  entriesDialog.addEventListener('click', event => {
+    if (event.target === entriesDialog) entriesDialog.close();
+  });
 
   function closeExperienceContents() {
     floatingContents.classList.remove('is-open');
@@ -421,7 +464,10 @@
   });
 
   document.addEventListener('keydown', event => {
-    if (event.key === 'Escape') closeExperienceContents();
+    if (event.key === 'Escape') {
+      closeExperienceContents();
+      if (entriesDialog.open) entriesDialog.close();
+    }
   });
 
   // ── Carousel ──
