@@ -256,6 +256,10 @@ section h2 {
   font-size: 0.875rem;
   margin-top: 0.2rem;
 }
+.cv-entry ul.desc {
+  margin: 0.2rem 0 0;
+  padding-left: 1rem;
+}
 
 .entry-list > .cv-entry:nth-child(n + 4) {
   display: none;
