@@ -640,6 +640,9 @@ footer {
   display: none;
 }
 
+.floating-contents-link[hidden] {
+  display: none;
+}
 .floating-contents.is-visible {
   display: block;
 }
